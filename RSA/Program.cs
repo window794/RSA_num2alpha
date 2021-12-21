@@ -43,6 +43,7 @@ namespace RSA
             int c = 904;
             int m = 0; //何かを初期化しないで宣言しちゃだめだよ
             int n = p * q;
+            String newLine = Environment.NewLine; //改行コードの取得
 
             for (int i = 0; i < e; i++)
             {
@@ -57,7 +58,7 @@ namespace RSA
             System.Numerics.BigInteger M = System.Numerics.BigInteger.Pow(c, d) % n;
             Program obj = new Program();
             String s2 = obj.Num2alpha((int)M); //メソッド実行
-            String s = String.Format("\r\nm={0}\r\nd={1}\r\nM={2}\r\nアルファベット変換={3}", m, d, M, s2);
+            String s = String.Format("m={0}{4}d={1}{4}M={2}{4}アルファベット変換={3}", m, d, M, s2, newLine);
             Console.WriteLine(s);
         }
     }
