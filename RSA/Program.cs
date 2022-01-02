@@ -12,7 +12,7 @@ namespace RSA
             String splnums = "";
             List<string> nums = new List<string>(); //動的配列の宣言
             int len = num.ToString().Length;
-            if (len % 2 == 0) //文字列の長さが偶数の場合のみ実行する
+            if (len % 2 == 0)//文字列の長さが偶数の場合のみ実行する
             {
                 for (int i = 0; i < len - 1; i += 2)
                 {
@@ -45,11 +45,10 @@ namespace RSA
             int n = p * q;
             String newLine = Environment.NewLine; //改行コードの取得
 
-            for (int i = 0; i < e; i++)
+            for (m = 0; m < e; m++)
             {
-                if (i * (p - 1) * (q - 1) % e == e - 1)
+                if (m * (p - 1) * (q - 1) % e == e - 1)
                 {
-                    m = i;
                     //Console.WriteLine(m);
                     break;
                 }
