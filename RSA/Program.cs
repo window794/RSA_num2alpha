@@ -45,10 +45,11 @@ namespace RSA
             int n = p * q;
             String newLine = Environment.NewLine; //改行コードの取得
 
-            for (m = 0; m < e; m++)
+            for (int i = 0; i < e; i++)
             {
-                if (m * (p - 1) * (q - 1) % e == e - 1)
+                if (i * (p - 1) * (q - 1) % e == e - 1)
                 {
+                    m = i;
                     //Console.WriteLine(m);
                     break;
                 }
